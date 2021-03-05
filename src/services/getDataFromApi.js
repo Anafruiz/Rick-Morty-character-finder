@@ -9,6 +9,7 @@ const getDataFromApi = () => {
           status: user.status,
           episode: user.episode,
           image: user.image,
+          origin: user.origin.name,
         };
       });
     })

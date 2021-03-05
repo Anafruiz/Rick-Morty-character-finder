@@ -1,23 +1,60 @@
 import { Link } from "react-router-dom";
+import logo from "../images/angry.jpg";
 
 const CharacterDetail = (props) => {
+  const renderStatus = () => {
+    if (props.user.status === "Alive") {
+      return <i className=" fas fa-heartbeat"></i>;
+    } else if (props.user.status === "Dead") {
+      return <i className=" fas fa-skull-crossbones"></i>;
+    } else if (props.user.status === "unknown") {
+      return <i className=" fas fa-question"></i>;
+    }
+  };
   if (props.user === undefined) {
-    return <h1>usuario no encontrado</h1>;
+    return (
+      <div className="notFound">
+        <h1>
+          User not found!<i class="far fa-sad-tear"></i>{" "}
+        </h1>
+        <img className="notFound__img" src={logo} />
+      </div>
+    );
   } else {
     return (
       <>
-        <section>
-          <img src={props.user.image} alt="" />
-          <ul>
-            <li>{props.user.name}</li>
-            <li>{props.user.status}: </li>
-            <li>Especie:{props.user.species}</li>
-            <li>Origen </li>
-            <li>Episodes:{props.user.episode.length}</li>
-          </ul>{" "}
-          <Link to="/" className="" title="Back to character list">
-            Return
-          </Link>
+        <section className="characterDetail">
+          <div className="characterDetail__card">
+            <img
+              className="characterDetail__img"
+              src={props.user.image}
+              alt=""
+            />
+            <ul className="characterDetail__item">
+              <li className="characterDetail__name">{props.user.name}</li>
+              <div className="characterDetail__container1">
+                <li className="characterDetail__status">
+                  Status: {renderStatus()}
+                </li>
+                <li className="characterDetail__species">
+                  Specie: {props.user.species}
+                </li>
+              </div>
+              <div className="characterDetail__container2">
+                <li className="characterDetail__origen">
+                  Origin: {props.user.origin}{" "}
+                </li>
+                <li className="characterDetail__episodes">
+                  Episodes: {props.user.episode.length}
+                </li>
+              </div>
+            </ul>{" "}
+            <Link to="/" className="link" title="Back to character list">
+              <button className="characterDetail__button">
+                <i className="fas fa-undo"></i>
+              </button>
+            </Link>
+          </div>
         </section>
       </>
     );

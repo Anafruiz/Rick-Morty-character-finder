@@ -5,6 +5,7 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import getDataFromApi from "../services/getDataFromApi";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -48,6 +49,7 @@ const App = () => {
           <Header />
           <Filters handleFilter={handleFilter} name={name} />
           <CharacterList users={filteredUsers} />
+          <Footer />
         </Route>
         <Route path="/user/:id" render={renderUser} />
       </Switch>

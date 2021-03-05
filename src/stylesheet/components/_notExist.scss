@@ -1,0 +1,19 @@
+//Result character doesn't exist
+.characterResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 28px;
+  min-height: 500px;
+  @media all and (min-width: 768px) {
+    font-size: 32px;
+  }
+  @media all and (min-width: 1200px) {
+    font-size: 44px;
+  }
+
+  &__span {
+    padding: 20px;
+  }
+}

@@ -10,7 +10,7 @@ const CharacterCard = (props) => {
             alt="foto del personaje"
           />
           <h2 className="characters__name">{props.user.name} </h2>
-          <p className="characters__species">Especie: {props.user.species}</p>
+          <p className="characters__species">Specie: {props.user.species}</p>
         </Link>
       </li>
     </>

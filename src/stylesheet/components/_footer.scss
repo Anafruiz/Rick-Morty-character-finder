@@ -1,0 +1,12 @@
+//Footer
+
+.footer {
+  color: $color-border;
+  font-size: 24px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  &__name {
+    padding: 10px;
+  }
+}

@@ -7,8 +7,8 @@ const FilterByName = (props) => {
   };
   return (
     <>
-      <label htmlFor="name">
-        Nombre:
+      <label className="form__label" htmlFor="name">
+        Name:
         <input
           value={props.name}
           onChange={handleChange}

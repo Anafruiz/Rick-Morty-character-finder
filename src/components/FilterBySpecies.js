@@ -7,16 +7,24 @@ const FilterBySpecies = (props) => {
   };
   return (
     <>
-      <label htmlFor="species">Especie:</label>
+      <label className="form__label" htmlFor="species">
+        Specie:
+      </label>
       <select
         className="form__input"
         name="species"
         id="species"
         onChange={handleChange}
       >
-        <option value="all">Todos</option>
-        <option value="Human">Human</option>
-        <option value="Alien">Alien</option>
+        <option className="form__input--color" value="all">
+          ALL
+        </option>
+        <option className="form__input--color" value="Human">
+          Human
+        </option>
+        <option className="form__input--color" value="Alien">
+          Alien
+        </option>
       </select>
     </>
   );

@@ -1,0 +1,18 @@
+//NotFound
+.notFound {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__img {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  .fa-sad-tear {
+    font-size: 40px;
+  }
+}
