@@ -28,6 +28,7 @@
     height: 150px;
     border-radius: 50%;
     &:hover {
+      filter: grayscale(80%);
       transform: scale(1.1);
     }
     @media all and(min-width:768px) {
@@ -98,8 +99,25 @@
     width: 75px;
     height: 40px;
     margin-top: 25px;
-    transition: 0.5s ease;
+    animation: intro;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
     &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .icon-status {
+    font-size: 20px;
+    @media all and(min-width:768px) {
+      font-size: 35px;
+    }
+  }
+  @keyframes intro {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
       transform: rotate(-360deg);
     }
   }

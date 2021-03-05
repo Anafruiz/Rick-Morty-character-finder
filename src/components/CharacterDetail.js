@@ -5,18 +5,18 @@ import PropTypes from "prop-types";
 const CharacterDetail = (props) => {
   const renderStatus = () => {
     if (props.user.status === "Alive") {
-      return <i className=" fas fa-heartbeat"></i>;
+      return <i className=" fas fa-heartbeat icon-status"></i>;
     } else if (props.user.status === "Dead") {
-      return <i className=" fas fa-skull-crossbones"></i>;
+      return <i className=" fas fa-skull-crossbones icon-status"></i>;
     } else if (props.user.status === "unknown") {
-      return <i className=" fas fa-question"></i>;
+      return <i className=" fas fa-question icon-status"></i>;
     }
   };
   if (props.user === undefined) {
     return (
       <div className="notFound">
         <h1>
-          User not found!<i class="far fa-sad-tear"></i>{" "}
+          User not found!<i className="far fa-sad-tear"></i>{" "}
         </h1>
         <img className="notFound__img" src={logo} />
       </div>
@@ -62,7 +62,7 @@ const CharacterDetail = (props) => {
   }
 };
 CharacterDetail.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   image: PropTypes.string,
   status: PropTypes.string,
   origin: PropTypes.string,

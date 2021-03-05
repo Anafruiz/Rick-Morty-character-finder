@@ -6,6 +6,9 @@
   min-height: 500px;
 
   &__card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     padding: 20px;
     list-style: none;
   }
