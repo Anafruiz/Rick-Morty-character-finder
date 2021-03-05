@@ -1,5 +1,6 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import PropTypes from "prop-types";
 
 const Filters = (props) => {
   const handleInput = (ev) => {
@@ -13,5 +14,8 @@ const Filters = (props) => {
       </form>
     </section>
   );
+};
+Filters.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
 };
 export default Filters;

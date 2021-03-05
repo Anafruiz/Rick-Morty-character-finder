@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/angry.jpg";
+import PropTypes from "prop-types";
 
 const CharacterDetail = (props) => {
   const renderStatus = () => {
@@ -59,5 +60,13 @@ const CharacterDetail = (props) => {
       </>
     );
   }
+};
+CharacterDetail.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  status: PropTypes.string,
+  origin: PropTypes.string,
+  species: PropTypes.string,
+  episodes: PropTypes.number,
 };
 export default CharacterDetail;

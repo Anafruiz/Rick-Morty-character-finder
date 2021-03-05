@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const FilterBySpecies = (props) => {
   const handleChange = (ev) => {
     props.handleFilter({
@@ -28,5 +30,8 @@ const FilterBySpecies = (props) => {
       </select>
     </>
   );
+};
+FilterBySpecies.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
 };
 export default FilterBySpecies;

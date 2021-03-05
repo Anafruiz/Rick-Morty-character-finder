@@ -1,4 +1,6 @@
 import CharacterCard from "./CharacterCard";
+import PropTypes from "prop-types";
+
 const CharacterList = (props) => {
   //Sort user Name alphabetically
   const sortUserName = props.users.sort((a, b) => {
@@ -32,5 +34,9 @@ const CharacterList = (props) => {
       </div>
     );
   return <section>{searchResults}</section>;
+};
+CharacterList.propTypes = {
+  users: PropTypes.array.isRequired,
+  id: PropTypes.number,
 };
 export default CharacterList;
