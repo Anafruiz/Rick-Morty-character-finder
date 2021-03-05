@@ -8,42 +8,73 @@
   height: 100vh;
 
   &__card {
-    margin-top: 20px;
-    border: 10px solid $color-border;
+    margin: 30px;
+    border: 8px solid $color-border;
     border-radius: 10px;
     text-align: center;
     padding: 20px;
     background: url("../../images/12687.jpg");
     background-size: cover;
+    @media all and(min-width:768px) {
+      margin-top: 20px;
+      border: 10px solid $color-border;
+    }
   }
   &__item {
     list-style: none;
   }
   &__img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media all and(min-width:768px) {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
   }
   &__name {
-    font-size: 20px;
+    font-size: 16px;
+    margin: 20px;
     padding: 10px;
     color: $color-name;
+    line-height: 30px;
+    @media all and(min-width:768px) {
+      font-size: 20px;
+    }
   }
   &__status {
-    font-size: 18px;
-    color: $color-fontDetails;
+    font-size: 16px;
+    @media all and(min-width:768px) {
+      font-size: 18px;
+      color: $color-fontDetails;
+    }
   }
   &__species {
+    font-size: 16px;
     padding: 10px;
-    font-size: 18px;
     color: $color-fontDetails;
+    @media all and(min-width:768px) {
+      font-size: 18px;
+    }
   }
   &__origen {
-    font-size: 14px;
+    font-size: 12px;
+
+    @media all and(min-width:768px) {
+      font-size: 14px;
+    }
   }
   &__episodes {
     padding: 10px;
-    font-size: 18px;
+    font-size: 14px;
+
+    @media all and(min-width:768px) {
+      font-size: 18px;
+    }
   }
   &__container1 {
     display: flex;
@@ -67,5 +98,9 @@
     width: 75px;
     height: 40px;
     margin-top: 25px;
+    transition: 0.5s ease;
+    &:hover {
+      transform: rotate(-360deg);
+    }
   }
 }

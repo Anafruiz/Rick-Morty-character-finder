@@ -7,6 +7,7 @@ const FilterBySpecies = (props) => {
       key: "species",
     });
   };
+
   return (
     <>
       <label className="form__label" htmlFor="species">
@@ -17,9 +18,10 @@ const FilterBySpecies = (props) => {
         name="species"
         id="species"
         onChange={handleChange}
+        value={props.species}
       >
         <option className="form__input--color" value="all">
-          ALL
+          All
         </option>
         <option className="form__input--color" value="Human">
           Human

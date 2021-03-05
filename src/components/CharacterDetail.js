@@ -50,7 +50,7 @@ const CharacterDetail = (props) => {
                 </li>
               </div>
             </ul>{" "}
-            <Link to="/" className="link" title="Back to character list">
+            <Link to="/" className="link" title="Back to user list">
               <button className="characterDetail__button">
                 <i className="fas fa-undo"></i>
               </button>

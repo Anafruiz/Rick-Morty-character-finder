@@ -26,6 +26,10 @@ const App = () => {
       setSpecies(data.value);
     }
   };
+  const resetInputs = () => {
+    setName("");
+    setSpecies("all");
+  };
   //Filter
   const filteredUsers = users
     .filter((user) => {
@@ -47,7 +51,12 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={App}>
           <Header />
-          <Filters handleFilter={handleFilter} name={name} />
+          <Filters
+            handleFilter={handleFilter}
+            name={name}
+            species={species}
+            resetInputs={resetInputs}
+          />
           <CharacterList users={filteredUsers} />
           <Footer />
         </Route>
