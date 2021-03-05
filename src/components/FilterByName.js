@@ -16,6 +16,7 @@ const FilterByName = (props) => {
           onChange={handleChange}
           className="form__input"
           type="text"
+          placeholder=" Search a character"
           name="name"
           id="name"
         />

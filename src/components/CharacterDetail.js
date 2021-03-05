@@ -3,6 +3,7 @@ import logo from "../images/angry.jpg";
 import PropTypes from "prop-types";
 
 const CharacterDetail = (props) => {
+  //status icon
   const renderStatus = () => {
     if (props.user.status === "Alive") {
       return <i className=" fas fa-heartbeat icon-status"></i>;
@@ -12,6 +13,8 @@ const CharacterDetail = (props) => {
       return <i className=" fas fa-question icon-status"></i>;
     }
   };
+
+  //User not found
   if (props.user === undefined) {
     return (
       <div className="notFound">
@@ -22,6 +25,7 @@ const CharacterDetail = (props) => {
       </div>
     );
   } else {
+    //Render detailCard
     return (
       <>
         <section className="characterDetail">
@@ -61,6 +65,9 @@ const CharacterDetail = (props) => {
     );
   }
 };
+
+//PropTypes
+
 CharacterDetail.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,

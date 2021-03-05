@@ -12,16 +12,18 @@ const CharacterList = (props) => {
       return 0;
     }
   });
+
   const userElements = sortUserName.map((user) => {
     return (
       <>
-        <CharacterCard key={user.id} user={user} episodes={props.episodes} />
+        <li className="characters__card" key={user.id}>
+          <CharacterCard user={user} episodes={props.episodes} />
+        </li>
       </>
     );
   });
 
   // Character doesn't exist
-
   const searchResults =
     props.users.length !== 0 ? (
       <ul className="characters">{userElements}</ul>
@@ -35,6 +37,7 @@ const CharacterList = (props) => {
     );
   return <section>{searchResults}</section>;
 };
+
 CharacterList.propTypes = {
   users: PropTypes.array.isRequired,
   id: PropTypes.number,
