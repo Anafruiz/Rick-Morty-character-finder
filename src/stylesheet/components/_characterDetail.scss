@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  height: 100vh;
   &__card {
     margin: 30px;
     border: 8px solid $color-border;
@@ -14,6 +14,7 @@
     padding: 20px;
     background: url("../../images/12687.jpg");
     background-size: cover;
+
     @media all and(min-width:768px) {
       margin-top: 20px;
       border: 10px solid $color-border;
