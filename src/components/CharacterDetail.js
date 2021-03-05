@@ -39,7 +39,8 @@ const CharacterDetail = (props) => {
               <li className="characterDetail__name">{props.user.name}</li>
               <div className="characterDetail__container1">
                 <li className="characterDetail__status">
-                  Status: {renderStatus()}
+                  Status:{props.user.status}
+                  {renderStatus()}
                 </li>
                 <li className="characterDetail__species">
                   Specie: {props.user.species}
