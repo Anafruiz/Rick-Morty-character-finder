@@ -15,11 +15,9 @@ const CharacterList = (props) => {
 
   const userElements = sortUserName.map((user) => {
     return (
-      <>
-        <li className="characters__card" key={user.id}>
-          <CharacterCard user={user} episodes={props.episodes} />
-        </li>
-      </>
+      <li className="characters__card" key={user.id}>
+        <CharacterCard user={user} episodes={props.episodes} />
+      </li>
     );
   });
 

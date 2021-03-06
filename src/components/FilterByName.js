@@ -8,20 +8,18 @@ const FilterByName = (props) => {
     });
   };
   return (
-    <>
-      <label className="form__label" htmlFor="name">
-        Name:
-        <input
-          value={props.name}
-          onChange={handleChange}
-          className="form__input"
-          type="text"
-          placeholder=" Search a character"
-          name="name"
-          id="name"
-        />
-      </label>
-    </>
+    <label className="form__label" htmlFor="name">
+      Name:
+      <input
+        value={props.name}
+        onChange={handleChange}
+        className="form__input"
+        type="text"
+        placeholder=" Search a character"
+        name="name"
+        id="name"
+      />
+    </label>
   );
 };
 FilterByName.propTypes = {

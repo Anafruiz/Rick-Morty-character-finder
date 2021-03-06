@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 
 const CharacterCard = (props) => {
   return (
-    <>
-      <Link to={`/user/${props.user.id}`} className="link">
-        <img
-          className="characters__img"
-          src={props.user.image}
-          alt="foto del personaje"
-        />
-        <h2 className="characters__name">{props.user.name} </h2>
-        <p className="characters__species">Specie: {props.user.species}</p>
-      </Link>
-    </>
+    <Link to={`/user/${props.user.id}`} className="link">
+      <img
+        className="characters__img"
+        src={props.user.image}
+        alt="foto del personaje"
+      />
+      <h2 className="characters__name">{props.user.name} </h2>
+      <p className="characters__species">Specie: {props.user.species}</p>
+    </Link>
   );
 };
 CharacterCard.propTypes = {
