@@ -4,10 +4,8 @@
   font-size: 18px;
   color: $color-border;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn();
+  @include center();
   @media all and (min-width: 768px) {
     font-size: 24px;
     flex-direction: row;

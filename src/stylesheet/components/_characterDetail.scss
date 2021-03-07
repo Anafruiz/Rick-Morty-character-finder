@@ -1,10 +1,8 @@
 //Carta de detalles
 
 .characterDetail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn();
+  @include center();
   height: 100vh;
   &__card {
     margin: 30px;
@@ -79,14 +77,12 @@
     }
   }
   &__container1 {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn();
     justify-content: space-around;
     padding: 10px;
   }
   &__container2 {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn();
     justify-content: space-center;
     padding: 10px;
     line-height: 15px;

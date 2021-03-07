@@ -1,9 +1,7 @@
 //Result character doesn't exist
 .characterResult {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  @include flexColumn();
+  @include center();
   font-size: 28px;
   min-height: 500px;
   @media all and (min-width: 768px) {
