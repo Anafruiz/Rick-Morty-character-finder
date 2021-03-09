@@ -11,6 +11,8 @@ const App = () => {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("all");
+  const [episodes, setEpisodes] = useState("");
+  const [type, setType] = useState("");
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -24,17 +26,35 @@ const App = () => {
       setName(data.value);
     } else if (data.key === "species") {
       setSpecies(data.value);
+    } else if (data.key === "episodes") {
+      setEpisodes(data.value);
+    } else if (data.key === "type") {
+      setType(data.value);
     }
   };
   const resetInputs = () => {
     setName("");
     setSpecies("all");
+    setEpisodes("");
+    setType("");
   };
   //Filter
   const filteredUsers = users
+    //byname
     .filter((user) => {
       return user.name.toLowerCase().includes(name.toLowerCase());
     })
+    //bytype
+    .filter((user) => {
+      return user.type.toLowerCase().includes(type.toLowerCase());
+    })
+    //episode
+    .filter((user) => {
+      return episodes === 0 || episodes === ""
+        ? true
+        : user.episode.length === parseInt(episodes);
+    })
+    //especies
     .filter((user) => {
       return species === "all" ? true : user.species === species;
     });
@@ -56,6 +76,8 @@ const App = () => {
             name={name}
             species={species}
             resetInputs={resetInputs}
+            episodes={episodes}
+            type={type}
           />
           <CharacterList users={filteredUsers} />
           <Footer />
