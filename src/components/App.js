@@ -11,6 +11,7 @@ const App = () => {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("all");
+  const [origin, setOrigin] = useState([]);
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -24,12 +25,28 @@ const App = () => {
       setName(data.value);
     } else if (data.key === "species") {
       setSpecies(data.value);
+    } else if (data.key === "origin") {
+      console.log("console", data.value);
+      const indexOrigin = origin.indexOf(data.value);
+      if (indexOrigin === -1) {
+        const newOrigin = [...origin, data.value];
+        setOrigin(newOrigin);
+        console.log(newOrigin);
+      } else {
+        const newOrigin = [...origin];
+        newOrigin.splice(indexOrigin, 1);
+        setOrigin(newOrigin);
+        console.log(newOrigin);
+      }
     }
   };
   const resetInputs = () => {
     setName("");
     setSpecies("all");
   };
+
+  const newOrigin = users.map((user) => user.origin);
+  const OriginList = [...new Set(newOrigin)];
   //Filter
   const filteredUsers = users
     .filter((user) => {
@@ -37,6 +54,13 @@ const App = () => {
     })
     .filter((user) => {
       return species === "all" ? true : user.species === species;
+    })
+    .filter((user) => {
+      if (origin.length === 0) {
+        return true;
+      } else {
+        return origin.includes(user.origin);
+      }
     });
 
   const renderUser = (props) => {
@@ -55,7 +79,9 @@ const App = () => {
             handleFilter={handleFilter}
             name={name}
             species={species}
+            origin={origin}
             resetInputs={resetInputs}
+            OriginList={OriginList}
           />
           <CharacterList users={filteredUsers} />
           <Footer />

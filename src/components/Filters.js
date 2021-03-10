@@ -1,5 +1,7 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
+import FilterByOrigin from "./FilterByOrigin";
+
 import PropTypes from "prop-types";
 import ResetButton from "./ResetButton";
 
@@ -14,6 +16,10 @@ const Filters = (props) => {
         <FilterBySpecies
           handleFilter={props.handleFilter}
           species={props.species}
+        />
+        <FilterByOrigin
+          handleFilter={props.handleFilter}
+          OriginList={props.OriginList}
         />
         <ResetButton resetInputs={props.resetInputs} />
       </form>
