@@ -12,6 +12,7 @@ const App = () => {
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("all");
   const [origin, setOrigin] = useState([]);
+  const [gender, setGender] = useState([]);
 
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -38,15 +39,32 @@ const App = () => {
         setOrigin(newOrigin);
         console.log(newOrigin);
       }
+    } else if (data.key === "gender") {
+      const indexGender = gender.indexOf(data.value);
+      if (indexGender === -1) {
+        const newGenderArray = [...gender, data.value];
+        setGender(newGenderArray);
+        console.log(newGenderArray);
+      } else {
+        const newGenderArray = [...gender];
+        newGenderArray.splice(indexGender, 1);
+        setGender(newGenderArray);
+        console.log(newGenderArray);
+      }
     }
   };
   const resetInputs = () => {
     setName("");
     setSpecies("all");
+    setOrigin([]);
+    setGender([]);
   };
 
   const newOrigin = users.map((user) => user.origin);
   const OriginList = [...new Set(newOrigin)];
+
+  const newGender = users.map((user) => user.gender);
+  const genderList = [...new Set(newGender)];
   //Filter
   const filteredUsers = users
     .filter((user) => {
@@ -60,6 +78,13 @@ const App = () => {
         return true;
       } else {
         return origin.includes(user.origin);
+      }
+    })
+    .filter((user) => {
+      if (gender.length === 0) {
+        return true;
+      } else {
+        return gender.includes(user.gender);
       }
     });
 
@@ -82,6 +107,7 @@ const App = () => {
             origin={origin}
             resetInputs={resetInputs}
             OriginList={OriginList}
+            genderList={genderList}
           />
           <CharacterList users={filteredUsers} />
           <Footer />

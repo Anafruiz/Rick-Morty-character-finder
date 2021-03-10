@@ -1,20 +1,20 @@
-const FilterByOrigin = (props) => {
+const FilterByGender = (props) => {
   const handleChange = (ev) => {
     props.handleFilter({
       value: ev.target.value,
-      key: "origin",
+      key: "gender",
     });
   };
-  const Origin = props.OriginList.map((user) => {
+  const Gender = props.genderList.map((user) => {
     return (
       <>
         <div className="checkbox">
           <label className="input">{user} </label>
           <input
-            className=""
+            className="input"
             onChange={handleChange}
             type="checkbox"
-            name="origin"
+            name="gender"
             value={user}
           />
         </div>
@@ -22,7 +22,7 @@ const FilterByOrigin = (props) => {
     );
   });
 
-  return <div className="origin__container">{Origin}</div>;
+  return <div>{Gender}</div>;
 };
 
-export default FilterByOrigin;
+export default FilterByGender;

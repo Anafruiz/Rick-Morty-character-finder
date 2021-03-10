@@ -10,6 +10,7 @@ const getDataFromApi = () => {
           episode: user.episode,
           image: user.image,
           origin: user.origin.name,
+          gender: user.gender,
         };
       });
     })
