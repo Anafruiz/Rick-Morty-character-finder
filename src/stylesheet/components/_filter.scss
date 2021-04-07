@@ -43,8 +43,13 @@
 }
 .checkbox {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
+  @media all and (min-width: 768px) {
+    font-size: 14px;
+  }
 }
 .input {
   padding-right: 5px;
